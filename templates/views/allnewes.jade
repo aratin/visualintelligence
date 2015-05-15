@@ -1,0 +1,72 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              .row
+                .col-md-4
+                  if data.allnewess.length
+                      if data.allnewess[0].image1.exists
+                        img(id="image",src=data.allnewess[0]._.image1.limit())
+                .col-md-8
+                a.news-row(href="/news1")
+                  h3 News1:-
+                small #{data.allnewess[0].date1}
+                  p
+                    | #{data.allnewess[0].news1}
+               .row
+                .col-md-4
+                 if data.allnewess.length
+                      if data.allnewess[0].image2.exists
+                        img(id="image1",src=data.allnewess[0]._.image2.limit())
+                .col-md-8
+                a.news-row(href="/news2")
+                  h3 News2:-
+                small #{data.allnewess[0].date2}
+                  p
+                    | #{data.allnewess[0].news2}
+
+               .row
+                .col-md-4
+                  if data.allnewess.length
+                      if data.allnewess[0].image3.exists
+                        img(id="image2",src=data.allnewess[0]._.image3.limit())
+                .col-md-8
+                a.news-row(href="/news3")
+                  h3 News3:-
+                small #{data.allnewess[0].date3}
+                  p
+                    | #{data.allnewess[0].news3}
+               .row
+                .col-md-4
+                  if data.allnewess.length
+                      if data.allnewess[0].image4.exists
+                        img(id="image3",src=data.allnewess[0]._.image4.limit())
+                .col-md-8
+                a.news-row(href="/news4")
+                  h3 News4:-
+                small #{data.allnewess[0].date4}
+                  p
+                    | #{data.allnewess[0].news4}
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            

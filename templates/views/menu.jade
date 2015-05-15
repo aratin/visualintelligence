@@ -1,0 +1,50 @@
+#top-navbar.navbar.navbar-inverse
+  .container
+    div.navbar-header
+        button.navbar-toggle.collapsed(aria-controls='navbar', aria-expanded='false', data-target='#navbar', data-toggle='collapse', type='button')
+          span.sr-only Toggle navigation
+            |               
+            span.icon-bar
+            |               
+            span.icon-bar
+            |               
+            span.icon-bar
+        a.navbar-brand.hidden-lg.hidden-md.hidden-sm(href="#") Menu
+      div#navbar.navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li#home
+            a(href="/") #{data.menus[0].homeNavbar}
+          li.dropdown#CompanyInfo
+            a.dropdown-toggle(aria-expanded="false", data-toggle="dropdown", role="button" href="#") #{data.menus[0].companyInfoNavbar}
+              span.caret
+            ul.dropdown-menu.outer-menu(role="menu")
+              li
+                a(href="/company-profile") #{data.menus[0].companyProfileMenu}
+              li
+                a(href="/mangementteam")
+                  | #{data.menus[0].mangementTeamMenu}
+              li
+                a(href="/differentiator") #{data.menus[0].differentiatorsMenu}
+              li
+                a(href="/career") #{data.menus[0].careersMenu}
+              li
+                a(href="/partner") #{data.menus[0].partnersMenu}
+          li.dropdown#offering
+            a.dropdown-toggle(aria-expanded="false", data-toggle="dropdown", role="button" href="/offering") 
+              | #{data.menus[0].offeringNavbar}
+              span.caret
+            ul.dropdown-menu.outer-menu(role="menu")
+              li
+                a(href="/softwareproduct") #{data.menus[0].softwareProductMenu}
+              li
+                a(href="/consultingservice")
+                  | #{data.menus[0].consultingMenu}
+              li
+                a(href="/msp") #{data.menus[0].mspMenu}
+              li
+                a(href="/specializedanalyse") #{data.menus[0].specializedMenu}
+              li
+                a(href="/technologyresale") #{data.menus[0].technologyMenu}
+          li#contactlist
+            a(href="/contact") #{data.menus[0].contactusNavbar}
+        .clearfix

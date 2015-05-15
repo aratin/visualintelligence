@@ -1,0 +1,48 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              h2 #{data.careers[0].heading}
+              .row
+                .col-md-4
+                  if data.careers.length
+                      if data.careers[0].careerImage.exists
+                        img(id="image",src=data.careers[0]._.careerImage.limit(640,640))
+                .col-md-8
+                  p
+                    | #{data.careers[0].careerText}
+                    br
+                    br
+                    | #{data.careers[0].careerSubtext}
+                    br
+                    | #{data.careers[0].careerSubstring}
+                    br
+                    | #{data.careers[0].careerShorttext}
+                    br
+                    | #{data.careers[0].careerShortstring}
+                    br
+                    | #{data.careers[0].careerEmail}
+            include ../views/companyinfolistmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            

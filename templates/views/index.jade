@@ -1,0 +1,121 @@
+extends ../layouts/default
+block content
+  body:.wrapper
+    header
+      include ../views/navbar
+      include ../views/menu
+    section
+      #banner
+        if data.homepages.length
+          .msp-images
+            if data.homepages[0].bannerPic.exists
+              .row
+                .col-xs-12
+                    img(src=data.homepages[0]._.bannerPic.limit(1498,494))
+      #content-box
+        .container
+          h2 #{data.homepages[0].whatweoffertitle}
+          .row
+            .col-md-3.col-sm-6.col-xs-12
+              .offer-box
+                .icon-border
+                  .icon-box
+                    i.fa.fa-pie-chart
+                span
+                  | #{data.homepages[0].Analyaticalporttalstring}
+                  br
+                  | #{data.homepages[0].Integrationastring}
+                  br
+                  | #{data.homepages[0].Environmentstring}
+                .black-hover-box
+                  h4 #{data.homepages[0].Analyaticalshortstring}
+                  p
+                    | #{data.homepages[0].Analyaticallongstring}
+                  a.btn.btn-info(href="/analyticalportal", type="button") Learn More
+            .col-md-3.col-sm-6.col-xs-12
+              .offer-box
+                .icon-border
+                  .icon-box
+                    i.fa.fa-database
+                span
+                  | #{data.homepages[0].TibcoSpotfireManaged}
+                  br
+                  | #{data.homepages[0].SolutionData}
+                  br
+                  | #{data.homepages[0].CenterHosting}
+                .black-hover-box
+                  h4 #{data.homepages[0].TibcoSpotshortstring}
+                  p
+                    | #{data.homepages[0].TibcoSpotlongstring}
+                  a.btn.btn-info(href="/tibcospotfire", type="button") Learn More
+            .col-md-3.col-sm-6.col-xs-12
+              .offer-box
+                .icon-border
+                  .icon-box
+                    i.fa.fa-group
+                span
+                  | #{data.homepages[0].MarketResearch}
+                  br
+                  | #{data.homepages[0].SocialMedia}
+                  br
+                  | #{data.homepages[0].Analytics}
+                .black-hover-box
+                  h4 #{data.homepages[0].MarketResearchshortstring}
+                  p
+                    | #{data.homepages[0].MarketResearchlongstring}
+                  a.btn.btn-info(href="/marketresearch", type="button") Learn More
+            .col-md-3.col-sm-6.col-xs-12
+              .offer-box
+                .icon-border
+                  .icon-box
+                    i.fa.fa-dot-circle-o
+                span
+                  | #{data.homepages[0].TibcoSpotfireCustom}
+                  br
+                  | #{data.homepages[0].SolutionDevelopment}
+                  br
+                  | #{data.homepages[0].Operations}
+                .black-hover-box
+                  h4 #{data.homepages[0].TibcoSpotfireCustomshortstring}
+                  p
+                    | #{data.homepages[0].TibcoSpotfireCustomlongstring}
+                  a.btn.btn-info(href="/tibcoSpotfirecustom", type="button") Learn More
+          .row
+            .col-md-6
+              h2 #{data.homepages[0].Aboutusstring}
+              p
+                | #{data.homepages[0].Aboutustextarea}
+              p
+                a.read-more(href="/readmore") Read More &#62; &#62;
+            .col-md-6
+              h2 #{data.homepages[0].NewsAndUpdatetitle}
+              a.news-row(href="/news1")
+                .col-md-4.col-sm-4.new-update-container
+                  if data.homepages.length
+                        img(id="image",src=data.homepages[0]._.image.limit())
+               
+                .col-md-8.col-sm-8.nopadding.new-container
+                  h3 News1:-
+                  small #{data.homepages[0].date}
+                  p
+                    | #{data.homepages[0].news1}
+                  hr
+                    |              
+              a.row(href="/news2")
+                .col-md-4.col-sm-4.new-update-container
+                  if data.homepages.length
+                        img(id="image",src=data.homepages[0]._.image1.limit())
+                .col-md-8.col-sm-8.nopadding.new-container
+                  h3 News2:-
+                  small #{data.homepages[0].date}
+                  p
+                    | #{data.homepages[0].news2}
+                  hr
+                    |           
+              div.pull-right
+                a(href="/allnewes")
+                  | Read More                
+      .container-fluid
+        .row
+          footer
+            include ../views/footer

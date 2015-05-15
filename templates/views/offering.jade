@@ -1,0 +1,37 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="/message")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              h2 #{data.offerings[0].heading}
+              .row
+                .col-md-4
+                  if data.offerings.length
+                    .msp-images
+                      if data.offerings[0].offeringImage.exists
+                        .row
+                          .col-xs-12
+                              img(id="image",src=data.offerings[0]._.offeringImage.limit(640,640))
+                .col-md-8
+            include ../views/listingmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer

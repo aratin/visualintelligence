@@ -1,0 +1,38 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              .row
+                .col-md-4
+                  if data.news3s.length
+                      if data.news3s[0].image.exists
+                        img(id="image",src=data.news3s[0]._.image.limit())
+                .col-md-8
+                  h3 News3:-
+                small #{data.news3s[0].date}
+                  p
+                    | #{data.news3s[0].news1}
+            include ../views/companyinfolistmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            

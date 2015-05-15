@@ -1,0 +1,69 @@
+#footer-box        
+  .container
+    .row
+      //- Document List Begins
+      .col-md-5.col-sm-5
+        h4 #{data.footers[0].Policytitle}
+        .pdf-list
+          ul
+            li
+              img(src='#{data.footers[0].Pdfimage}')              
+              a(href="pdf/vi acceptable use policy.pdf")
+                | #{data.footers[0].visuallink}
+            li
+              img(src='#{data.footers[0].Pdfimage}')
+              a(href="pdf/privacy policy.pdf")                 
+                 | #{data.footers[0].visualsublink}
+      //- attach download = "name" in a(href="URL of pdf file" download="dummy name.pdf") to be able to download the pdf 
+      //- Document List Ends
+      //- Footer Menu Begins
+      .col-md-4.col-sm-4
+        h4 #{data.footers[0].OurSolutionstitle}
+        .row
+          .col-md-6
+            .footer-menu
+              ul
+                li
+                  a(href="/healthcareinsurer") #{data.footers[0].HealthcareInsurers}
+                li
+                  a(href="/healthcareprovider") #{data.footers[0].HealthcareProviders}
+                li
+                  a(href="/employer") #{data.footers[0].Employers}
+                li
+                  a(href="/pharmaceutical") #{data.footers[0].Pharmaceuticals}
+          .col-md-6 
+            .footer-menu
+              ul
+                li
+                  a(href="/lifestyleindustry") #{data.footers[0].LifestyleIndustry}
+                li
+                  a(href="/researchinstitute") #{data.footers[0].ResearchInstitutes}
+                li
+                  a(href="/crm") #{data.footers[0].CRM}
+                li
+                  a(href="/lawenforcement") #{data.footers[0].LawEnforcement}
+      //- Footer Menu Ends
+      //- Contact Begins
+      .col-md-3.col-sm-3
+        h4  #{data.footers[0].ContactUstitle}
+        p #{data.footers[0].VisualIntelligencefooter}
+        p
+        p #{data.footers[0].footeraddress}
+        p            
+          a(href="mailto:someone@example.com?Subject=welcome%20to%20visintel.com" target="_blank")
+            | Email: #{data.footers[0].footeremail}
+        
+        p
+          | #{data.footers[0].FollowUs} :
+          a(href="http://www.facebook.com/pages/Visual-Intelligence-LLC/125899284140778", target="_blank")
+            img.social-icon(src='#{data.footers[0].facebookimage}')
+          a(href="http://www.linkedin.com/company/visual-intelligence-llc?goback=%2Enpe_*1_*1_*1_*1%2Enpe_*1_en*4US_*1_*1" ,target="_blank")
+            img.social-icon(src='#{data.footers[0].linkdinimage}')
+      
+      //- Contact Ends
+//- Copyright Begins
+#copyright-box
+  .container
+    span
+      | copyright 2015 
+      a(href="#") Visual InteligenceLLC

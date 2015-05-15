@@ -1,0 +1,46 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              h2 #{data.informationreportingstrategys[0].heading}
+              .row
+                .col-md-4
+                  if data.informationreportingstrategys.length
+                        img(id="image",src=data.informationreportingstrategys[0]._.image.limit(640,640))
+                .col-md-8
+                    p
+                      | #{data.informationreportingstrategys[0].text}
+                      br
+                    p
+                      | #{data.informationreportingstrategys[0].subText}
+                      br
+                    p
+                      | #{data.informationreportingstrategys[0].shortString}
+                      br
+                    p
+                      | #{data.informationreportingstrategys[0].longString}
+            .expand
+            include ../views/listingmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            

@@ -1,0 +1,43 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              h2 #{data.visualbusinessintelligences[0].heading}
+              .row
+                .col-md-4
+                  if data.visualbusinessintelligences.length
+                      if data.visualbusinessintelligences[0].image.exists
+                        img(id="image",src=data.visualbusinessintelligences[0]._.image.limit())
+                .col-md-8
+                  p
+                    | #{data.visualbusinessintelligences[0].text}
+                  p
+                    | #{data.visualbusinessintelligences[0].subText}
+                  p
+                    | #{data.visualbusinessintelligences[0].shortString}
+                  p
+                    | #{data.visualbusinessintelligences[0].longString}
+            include ../views/listingmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            

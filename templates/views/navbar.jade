@@ -1,0 +1,16 @@
+#header-top
+  .container
+    .row
+      .col-md-3.col-sm-3.col-xs-12
+        .logo
+          a(href="/")
+            img(src='#{data.navbars[0].LogoPic}', alt="logo")
+      .col-md-9.col-sm-9.col-xs-12
+        .top-contact.pull-right
+          .box-1
+            img(src='#{data.navbars[0].mailPic}')
+            a(href="mailto:someone@example.com?Subject=welcome%20to%20visintel.com" target="_blank") #{data.navbars[0].mailstring}
+          .box-2
+            img(src='#{data.navbars[0].contactPic}')
+            span #{data.navbars[0].contactstring}
+            

@@ -1,0 +1,68 @@
+extends ../layouts/default
+block content
+    header
+      include ../views/navbar
+      include ../views/menu
+     section
+      #inner-banner
+      #inner-content-box#content-box
+        .container
+          #offerings
+            .col-md-9.text-right
+              ul.list-inline
+                li
+                  a(href="#",onclick="printFunction()")
+                    i.fa.fa-lg.fa-print
+                li
+                  a#pdf
+                    i.fa.fa-lg.fa-file-pdf-o
+                li
+                  a(href="#")
+                    i.fa.fa-lg.fa-envelope
+            .col-md-9#content-data
+              h2 #{data.differentiators[0].heading}
+              .row
+                .col-md-4
+                  if data.differentiators.length
+                      if data.differentiators[0].differentiatorImage.exists
+                        img(id="image",src=data.differentiators[0]._.differentiatorImage.limit(640,640))
+                .col-md-8
+                  p
+                    | #{data.differentiators[0].differentiatorText}
+               .row
+                .col-md-4
+                 if data.differentiators.length
+                      if data.differentiators[0].differentiatorSubImage.exists
+                        img(id="image1",src=data.differentiators[0]._.differentiatorSubImage.limit(640,640))
+                .col-md-8
+                  p
+                    | #{data.differentiators[0].differentiatorShortSubText}
+                    br
+                    | #{data.differentiators[0].differentiatorLongSubText}
+
+               .row
+                .col-md-4
+                  if data.differentiators.length
+                      if data.differentiators[0].differentiatorSubStringImage.exists
+                        img(id="image2",src=data.differentiators[0]._.differentiatorSubStringImage.limit(640,640))
+                .col-md-8
+                  h1
+                    | #{data.differentiators[0].differentiatorShortStringText}
+                  P
+                   | #{data.differentiators[0].differentiatorLongStringText}
+               .row
+                .col-md-4
+                  if data.differentiators.length
+                      if data.differentiators[0].differentiatorSubtextImage.exists
+                        img(id="image3",src=data.differentiators[0]._.differentiatorSubtextImage.limit(640,640))
+                .col-md-8
+                  p
+                    | #{data.differentiators[0].differentiatorTextLong}
+                  div
+                    .someClass                    
+            include ../views/companyinfolistmenu
+      .container-fluid
+        .row
+          footer
+            include ../views/footer
+            
